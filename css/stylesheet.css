@@ -1,7 +1,7 @@
 :root {
 
 
-
+}
 
 .menu{
   margin: 0;
@@ -18,9 +18,44 @@
 }
 
 .log-box{
-
 }
 
 .w-33{
   width: 33%;
+}
+
+.box{
+  border-radius: 0.25em;
+}
+
+
+.box-link{
+
+  padding: 0.5em 1em;
+  border: none;
+}
+
+.active-box-link{
+  background: #202326;
+  color: white;
+
+}
+
+.ltc{
+  border-top-left-radius: 0.25em;
+}
+
+.rtc{
+  border-bottom-right-radius: 0.25em;
+}
+
+.menu-box{
+  border-top-right-radius: 0.25em;
+  border-bottom-right-radius: 0.25em;
+  border-bottom-left-radius: 0.25em;
+
+}
+
+.hs-50{
+  height: 500px;
 }
