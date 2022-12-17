@@ -4,10 +4,10 @@ function route(content){
 }
 
 const routes = {
-    404   :         "/DaalFrontend/html/404.html",
-    "home" :       "/DaalFrontend/html/content/main-page.html",
-    "page1" :       "/DaalFrontend/html/content/page1.html",
-    "page2" :       "/DaalFrontend/html/content/page2.html",
+    404   :         "/html/404.html",
+    "home" :        "/html/content/main-page.html",
+    "page1" :       "/html/content/page1.html",
+    "page2" :       "/html/content/page2.html",
 };
 
 const handleLocation = async (path) => {

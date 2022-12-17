@@ -1,48 +1,23 @@
 :root {
 
-  --1: #e76f51;
-  --2: #f4a261;
-  --3: #e9c46a;
-
-  --4: #2a9d8f;
-  --5: #264653;
-  --6: #ffeee6;
-}
 
 
-.bg-main{
-  background: var(--1);
-}
-.bg-4{
-  background: var(--4);
-}
-
-.bg{
-  background: var(--6);
-
-}
 
 .menu{
   margin: 0;
   padding: 0;
-  background: var(--5);
 }
 
 .content{
   margin: 0;
   padding: 0;
-  background: var(--6);
 }
 
 .active{
   margin: 1em;
-  background: var(--6) !important;
-  color: var(--5) !important;
 }
 
 .log-box{
-  color: var(--6);
-  background: var(--5);
 
 }
 
