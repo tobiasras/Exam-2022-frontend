@@ -8,7 +8,7 @@ const routes = {
     "home" :        "/content/main-page.html",
     "page1" :       "/content/page1.html",
     "page2" :       "/content/page2.html",
-};gi t
+};
 
 const handleLocation = async (path) => {
     const route = routes[path] || [404];
