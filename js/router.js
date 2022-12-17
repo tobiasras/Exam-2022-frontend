@@ -33,9 +33,11 @@ const mains = {
 
     "page1": function main() {
 
+
         $(document).ready(function () {
 
-            console.log(2)
+
+
         });
 
     },
@@ -54,7 +56,9 @@ const mains = {
 
 
         $(document).ready(function () {
-            console.log(3)
+
+
+
         });
 
 
