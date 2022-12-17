@@ -4,11 +4,11 @@ function route(content){
 }
 
 const routes = {
-    404   :         "/html/404.html",
-    "home" :        "/html/content/main-page.html",
-    "page1" :       "/html/content/page1.html",
-    "page2" :       "/html/content/page2.html",
-};
+    404   :         "/404.html",
+    "home" :        "/content/main-page.html",
+    "page1" :       "/content/page1.html",
+    "page2" :       "/content/page2.html",
+};gi t
 
 const handleLocation = async (path) => {
     const route = routes[path] || [404];
