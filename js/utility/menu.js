@@ -8,7 +8,6 @@ class Menu {
     }
     */
 
-
     constructor(pages, btnClass, boxClass, activeBtnClass) {
         // used to hide boxes
         this.boxClass = boxClass;
@@ -42,7 +41,5 @@ class Menu {
             menu.showPage(page);
         });
     }
-
-
 
 }

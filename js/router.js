@@ -1,9 +1,28 @@
-$(document).ready(function () {
-    handleLocation("home")
-});
+
+
+function activeBtn(content){
+
+    $('.nav-link').removeClass("active")
+
+    switch (content){
+        case "home":
+            $('#home-btn').addClass("active")
+            break;
+        case "page1":
+            $('#page1-btn').addClass("active")
+            break;
+        case "page2":
+            $('#page2-btn').addClass("active")
+            break;
+    }
+
+
+
+}
 
 function route(content) {
     handleLocation(content);
+    activeBtn(content);
 }
 
 const routes = {
@@ -26,20 +45,12 @@ const mains = {
 
         const menu = new Menu(pages, 'box-link', 'box-page', 'active-box-link')
         menu.showPage('menu1')
-
-
-
     },
 
     "page1": function main() {
-
-
         $(document).ready(function () {
 
-
-
         });
-
     },
 
 
@@ -48,35 +59,31 @@ const mains = {
         $(document).ready(function () {
             console.log(2)
         });
-
     },
 
 
     404: function main() {
 
-
         $(document).ready(function () {
 
-
-
         });
-
-
     },
 }
 
+$(document).ready(function () {
+    route("home")
+});
 
 const handleLocation = async (path) => {
+
     const route = routes[path] || [404];
+
+
     const html = await fetch(route).then((data) => data.text());
     document.getElementById("main-content").innerHTML = html;
 
     mains[path]();
-
 };
-
-// loads the first page
-//window.onpopstate = handleLocation("home");
 
 // prevents defaults when clicking links
 document.addEventListener("click", function (event) {

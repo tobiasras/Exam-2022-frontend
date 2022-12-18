@@ -38,7 +38,7 @@
             <ul class="d-flex-1 flex-column justify-content-between nav nav-pills mt-3">
 
                 <li class="nav-item border-bottom border-top ">
-                    <a class="nav-link d-flex m-0 justify-content-start text-white" href="#"
+                    <a id="btn-index" class="nav-link d-flex m-0 justify-content-start text-white" href="#"
                        onclick="route('index')">
                         <i class="material-icons menu-icon me-2">play_arrow</i>
                         <p class="m-0">Spil</p>
@@ -69,83 +69,11 @@
     <!-- content -->
     <div class="col content background p-3" id="main-content">
 
-
-
-        <script>
-            class Menu {
-                constructor(pages, btnClass, boxClass, activeBtnClass) {
-                    // used to hide boxes
-                    this.boxClass = boxClass;
-                    // used to deactivate btn
-
-                    this.btnClass = btnClass;
-                    this.pages = pages;
-                    this.activeBtnClass = activeBtnClass;
-                }
-
-                hide(){
-                    $('.' + this.btnClass).removeClass(this.activeBtnClass);
-                    $('.' + this.boxClass).hide();
-                }
-
-                show(page){
-                    this.hide();
-                    $('#' + this.pages[page][0]).show();
-                    $('#' + this.pages[page][1]).addClass(this.activeBtnClass);
-                }
-            }
-
-
-
-            $( document ).ready(function() {
-                menu.show('menu1');
-            });
-        </script>
-
         <!-- START EDIT HERE -->
 
-        <div class="w-50 text-white ">
-            <div class="d-flex justify-content-start">
-                <button id="page-1-btn" onclick="menu.show('menu1')" class="ltc box-link active-box-link">Menu</button>
-                <button id="page-2-btn" onclick="menu.show('menu2')" class="box-link">Menu</button>
-                <button id="page-3-btn" onclick="menu.show('menu3')" class="rtc box-link">Menu</button>
-            </div>
 
-            <div class="bg-dark p-3 menu-box hs-50" id="box-content">
-                <div id="page-1" class="box-page">
-                    <h2>Text 1</h2>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry. Lorem Ipsum has been the industry's standard dummy text
-                        ever since the 1500s, when an unknown printer took a galle
-                    </p>
-                </div>
-
-                <div id="page-2" class="box-page">
-                    <h2>Text 2</h2>
-                    <p>
-                        many web sites still in their infancy. Various versions have evolved
-                        over the years, sometimes by accident, sometimes on purpose
-                        (injected humour and the like
-                    </p>
-                </div>
-
-                <div id="page-3" class="box-page">
-                    <h2>Text 3</h2>
-                    <p>
-                        There are many variations of passages of Lorem Ipsum available,
-                        but the majority have suffered alteration in some form, by
-                        injected humour, or randomised words which don't look even slightly
-                        believable. If you are going to use a passage of Lorem Ipsum, yo
-                    </p>
-                </div>
-            </div>
-
-
-        </div>
 
         <!-- END EDIT HERE -->
-
 
     </div>
 
@@ -157,7 +85,6 @@
 <script src="/js/utility/api.js"></script>
 <script src="/js/utility/formData.js"></script>
 
-<script src="/js/main.js"></script>
 
 
 </body>
