@@ -76,9 +76,9 @@
         <div class="d-flex justify-content-between">
             <div class="w-33 ">
                 <div class="d-flex justify-content-start">
-                    <button id="page-1-btn" class="ltc box-link active-box-link">Opret Ordrer</button>
+                    <button id="page-1-btn" onclick="products.displayProductsForDelivery('')" class="ltc box-link active-box-link">Opret Ordrer</button>
 
-                    <button id="page-2-btn" class="box-link">Find odrer</button>
+                    <button id="page-2-btn" onclick="orders.displayOrders()" class="box-link">Find odrer</button>
 
                     <button id="page-3-btn" class="rtc box-link">Opret dilvery</button>
                 </div>
@@ -99,7 +99,7 @@
                         <p>Total Weight: <span id="totalWeight"></span></p>
                         <p>Total price: <span id="totalPrice"></span></p>
 
-                        <button class="btn btn-outline-success" onclick="orders.createOrder()">Opret odrer</button>
+                        <button class="btn btn-outline-success" onclick="createOrder.createOrder()">Opret odrer</button>
 
                         <table class="table w-100 mt-3">
 
@@ -125,6 +125,19 @@
                     <!-- Find Dilevery-->
                     <div id="page-2" class="box-page">
 
+                        <form class="mt-3" onsubmit="orders.findOrderByID(event)">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <label for="order-id" class="col-form-label">Søg [ID]</label>
+                                </div>
+                                <div>
+                                    <input type="number" id="order-id" class="form-control"
+                                           aria-describedby="passwordHelpInline">
+                                </div>
+
+                                <button type="submit" class="btn btn-outline-success">Søg</button>
+                            </div>
+                        </form>
 
                     </div>
 
@@ -183,7 +196,9 @@
 
 <script type="text/javascript" src="/js/products/products.js"></script>
 <script type="text/javascript" src="/js/delivery/deliveryMain.js"></script>
+<script type="text/javascript" src="/js/delivery/createOrder.js"></script>
 <script type="text/javascript" src="/js/delivery/order.js"></script>
+
 
 
 </body>

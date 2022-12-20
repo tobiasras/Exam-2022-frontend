@@ -111,10 +111,6 @@ class Products {
         api("api/get/productInStock/ByName?search=" + nameSearch).then(response => {
             table.empty();
 
-            console.log(response)
-
-            console.log(JSON.stringify(response))
-
             response.forEach(function (product) {
                 let row = $('<tr></tr>');
 
@@ -145,7 +141,7 @@ class Products {
 
                 $(".table-btn-change").off().on('click', function (event) {
                     menu.showPage('menu1')
-                    orders.addProduct(this.value)
+                    createOrder.addProduct(this.value)
                 });
 
             });
@@ -201,15 +197,6 @@ class Products {
     }
 
     changeProductMenu(productID) {
-        /*
-        {
-            "id": 45,
-            "name": "asdasd",
-            "price": 123.0,
-            "weightGram": 12.0,
-            "": []
-        }
-         */
 
         api("api/get/product/byID?productID=" + productID, "GET").then(response => {
 
