@@ -42,12 +42,9 @@ class Products {
 
     // takes list of products
     displayProducts(listOfProducts) {
-
         const table = $('#productDisplayWindow');
 
         table.empty();
-
-
         listOfProducts.forEach(function (product) {
             const productClass = this;
             /*
@@ -80,6 +77,7 @@ class Products {
             colChange.append(changeBtn);
 
             let colDelete = $('<td></td>');
+
             let deleteBtn = $('<button>Slet</button>').addClass('btn btn-sm btn-outline-danger table-btn-delete');
             deleteBtn.val(product.id);
 
@@ -104,6 +102,60 @@ class Products {
 
 
         });
+    }
+
+    displayProductsForDelivery(nameSearch){
+        const table = $('#productDisplayWindow');
+
+
+        api("api/get/productInStock/ByName?search=" + nameSearch).then(response => {
+            table.empty();
+
+            console.log(response)
+
+            console.log(JSON.stringify(response))
+
+            response.forEach(function (product) {
+                let row = $('<tr></tr>');
+
+                let id = $('<td>' + product.id + '</td>');
+                let name = $('<td>' + product.name + '</td>');
+                let price = $('<td>' + product.price + '</td>');
+                let weightGram = $('<td>' + product.weightGram + '</td>')
+                let stock = $('<td>' + product.products.length + '</td>')
+
+                row.append(id);
+                row.append(name);
+                row.append(price);
+                row.append(weightGram);
+                row.append(stock);
+
+                let colAddProduct = $('<td></td>');
+                let addBtn = $('<button>Add</button>').addClass('btn btn-sm btn-outline-success table-btn-change');
+                addBtn.val(product.id);
+
+
+                colAddProduct.append(addBtn);
+                row.append(colAddProduct);
+
+
+                table.append(row);
+
+
+
+                $(".table-btn-change").off().on('click', function (event) {
+                    menu.showPage('menu1')
+                    orders.addProduct(this.value)
+                });
+
+            });
+
+        });
+
+
+
+
+
 
 
     }
@@ -113,9 +165,10 @@ class Products {
         let serializeArray = $('#editProductType').serializeArray();
         let any = formCleaner.cleanFormData(serializeArray);
 
-        api("api/post/create/productType", "POST", any).then(response => {
+        api("api/post/create/productTypes", "POST", any).then(response => {
             products.searchProductsByName("");
         });
+
 
     }
 
@@ -139,7 +192,7 @@ class Products {
         let serializeArray = $('#createProductType').serializeArray();
         let any = formCleaner.cleanFormData(serializeArray);
 
-        api("api/post/create/productType", "POST", any).then(response => {
+        api("api/post/create/productTypes", "POST", any).then(response => {
 
             products.searchProductsByName("");
         });
@@ -159,6 +212,9 @@ class Products {
          */
 
         api("api/get/product/byID?productID=" + productID, "GET").then(response => {
+
+            console.log(response);
+
             $('#edit-product-id').val(response.id);
             $('#edit-product-name').val(response.name);
             $('#edit-product-price').val(response.price);
@@ -170,6 +226,14 @@ class Products {
         });
 
 
+    }
+
+
+
+
+
+    findProductByID(productTypeID){
+        return api("api/get/product/byID?productID=" + productTypeID, "GET");
     }
 
 

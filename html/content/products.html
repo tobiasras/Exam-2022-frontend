@@ -30,7 +30,6 @@
 
 <body>
 
-
 <div class="m-0 p-0 row vh-100">
 
     <!-- Menu -->
@@ -42,8 +41,9 @@
 
             <ul class="d-flex flex-column justify-content-between nav nav-pills mt-3">
 
-                <li class="nav-item border-bottom border-top " >
-                    <a id="home-btn" class="nav-link d-flex m-0 justify-content-start text-white" href="../../index.html"
+                <li class="nav-item border-bottom border-top ">
+                    <a id="home-btn" class="nav-link d-flex m-0 justify-content-start text-white"
+                       href="../../index.html"
                        onclick="route('home')">
                         <i class="material-icons menu-icon me-2">play_arrow</i>
                         <p class="m-0">Home</p>
@@ -59,8 +59,8 @@
                 </li>
 
                 <li class="nav-item">
-                    <a  id="page2-btn" class="nav-link d-flex m-0 justify-content-start text-white" href="delivery.html"
-                        onclick="route('delivery')">
+                    <a id="page2-btn" class="nav-link d-flex m-0 justify-content-start text-white" href="delivery.html"
+                       onclick="route('delivery')">
                         <i class="material-icons menu-icon me-2">local_shipping</i>
                         <p class="m-0">Odrer</p>
                     </a>
@@ -132,9 +132,7 @@
 
                     <!-- CREATE PRODUCT-->
                     <div id="page-2" class="box-page">
-
                         <h2>Tilføj nyt produkt</h2>
-
                         <form onsubmit="products.saveProduct(event)" id="createProductType">
 
                             <form>
@@ -145,7 +143,8 @@
 
                                 <div class="form-group">
                                     <label for="create-product-weight">Weight</label>
-                                    <input type="text" name="weightGram" class="form-control" id="create-product-weight">
+                                    <input type="text" name="weightGram" class="form-control"
+                                           id="create-product-weight">
                                 </div>
 
                                 <div class="form-group">
@@ -236,7 +235,6 @@
 
 
                 <div class="bg-white hs-50 overflow-auto">
-
                     <table class="table w-100">
                         <thead>
                         <tr class="table-dark">
